@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sob="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bodyTempValue"
+            type="Float" />
+
+        <variable
+            name="envTempValue"
+            type="Float" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--    只有体温-->
+        <ViewStub
+            android:id="@+id/bodyTempView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/item_body_temperature"
+            sob:tmp="@{bodyTempValue}" />
+
+        <!--    支持体温和环境温度显示的UI-->
+        <ViewStub
+            android:id="@+id/bodyAndEnvView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/item_body_and_env_temperature" />
+
+        <!--        不支持显示的UI-->
+        <ViewStub
+            android:id="@+id/noSupportView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/item_not_support_temperature" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
