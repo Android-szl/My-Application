@@ -12,5 +12,6 @@ class TaoBaoActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, OnSellFragment())
             .commit()
+        //孙培翔
     }
 }
